@@ -32,27 +32,7 @@ The program now supports reading configuration from JSON files. There are two co
 
 ### Configuration File Format
 
-Here is an example of the `config.default.json` file:
-```json
-{
-    "left_keys": [],
-    "middle_keys": [
-    {
-        "mods": ["KEY_RIGHTMETA"],
-        "keys": ["KEY_F13"]
-    }
-    ],
-    "right_keys": [
-    {
-        "mods": ["KEY_RIGHTSHIFT", "KEY_RIGHTMETA"],
-        "keys": ["KEY_F13"]
-    }
-    ],
-    "polling_rate": 10
-}
-```
-
-The config.json file should have the same format and can be used to specify custom key mappings. For example:
+The config.json file should have the same format as the config.default.json and can be used to specify custom key mappings. For example:
 ```json
 {
     "left_keys": [
