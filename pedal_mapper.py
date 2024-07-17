@@ -43,7 +43,7 @@ class PedalMapper:
     def parse_key_combos(self, key_combos):
         parsed_combos = []
         for combo in key_combos:
-            mods = [getattr(e, mod) for mod in combo["mods"]]
+            mods = [getattr(e, mod) for mod in combo.get("mods", [])]
             keys = [getattr(e, key) for key in combo["keys"]]
             parsed_combos.append(KeyCombo(mods, keys))
         return parsed_combos

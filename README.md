@@ -43,13 +43,12 @@ The config.json file should have the same format as the config.default.json and 
     ],
     "middle_keys": [
         {
-            "mods": [],
+            "mods": ["KEY_RIGHTSHIFT"],
             "keys": ["KEY_F24"]
         }
     ],
     "right_keys": [
         {
-            "mods": [],
             "keys": ["KEY_F24"]
         }
     ]
