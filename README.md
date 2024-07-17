@@ -9,8 +9,8 @@ Stream Deck Pedal.
 
 There aren't a lot of dependencies, but what you do need are:
 - Python
-- hidapi
-- evdev
+- hidapi (https://pypi.org/project/hidapi/)
+- evdev (https://pypi.org/project/evdev/)
 
 ## How it works
 
@@ -23,6 +23,62 @@ or equivalent to have it always running in the background.
 
 You can find a list of all possible keycodes
 [here](https://github.com/torvalds/linux/blob/master/include/uapi/linux/input-event-codes.h).
+
+## Configuration
+
+The program now supports reading configuration from JSON files. There are two configuration files:
+- `config.default.json`: This file contains the default key mappings and settings.
+- `config.json`: This file is optional and can be used to override the default settings with user-specific values.
+
+### Configuration File Format
+
+Here is an example of the `config.default.json` file:
+```json
+{
+    "left_keys": [],
+    "middle_keys": [
+    {
+        "mods": ["KEY_RIGHTMETA"],
+        "keys": ["KEY_F13"]
+    }
+    ],
+    "right_keys": [
+    {
+        "mods": ["KEY_RIGHTSHIFT", "KEY_RIGHTMETA"],
+        "keys": ["KEY_F13"]
+    }
+    ],
+    "polling_rate": 10
+}
+```
+
+The config.json file should have the same format and can be used to specify custom key mappings. For example:
+```json
+{
+    "left_keys": [
+        {
+            "mods": [],
+            "keys": ["KEY_F24"]
+        }
+    ],
+    "middle_keys": [
+        {
+            "mods": [],
+            "keys": ["KEY_F24"]
+        }
+    ],
+    "right_keys": [
+        {
+            "mods": [],
+            "keys": ["KEY_F24"]
+        }
+    ]
+}
+```
+
+### How It Works
+
+The program first loads the settings from config.default.json and then overwrites those settings with any values found in config.json. This allows you to maintain a base configuration while making specific customizations as needed.
 
 ## Possible issues
 

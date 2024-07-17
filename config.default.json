@@ -1,0 +1,16 @@
+{
+    "left_keys": [],
+    "middle_keys": [
+    {
+        "mods": ["KEY_RIGHTMETA"],
+        "keys": ["KEY_F13"]
+    }
+    ],
+    "right_keys": [
+    {
+        "mods": ["KEY_RIGHTSHIFT", "KEY_RIGHTMETA"],
+        "keys": ["KEY_F13"]
+    }
+    ],
+    "polling_rate": 10
+}
